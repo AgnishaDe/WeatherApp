@@ -37,8 +37,8 @@
               </li>
             </ul>
             <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <input id="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
             </form>
           </div>
         </div>
@@ -46,58 +46,58 @@
 
 
       <div class="container">
-        <h1 class="my-4 text-center">Weather for Delhi</h1>
+        <h1 class="my-4 text-center">Weather for <span id="cityName"></span></h1>
         <main>
             <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
               <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm">
-                  <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">Temparature</h4>
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                    <div class="card-header py-3 text-bg-primary border-primary">
+                    <h4 class="my-0 fw-normal">Temparature Info</h4>
                   </div>
                   <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
+                    <h1 class="card-title pricing-card-title"><span id="temp2"></span><small class="text-body-secondary fw-light"> &#8451</small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
-                      <li>Temparature is <span id="temp"></span></li>
-                      <li>Min Temparature is <span id="min_temp"></span></li>
-                      <li>Max Temparature is <span id="max_temp"></span></li>
+                      <li>Temparature(&#8451) is <span id="temp"></span></li>
+                      <li>Min Temparature(&#8451) is <span id="min_temp"></span></li>
+                      <li>Max Temparature(&#8451) is <span id="max_temp"></span></li>
                     </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm">
-                  <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">Pro</h4>
-                  </div>
-                  <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
-                    <ul class="list-unstyled mt-3 mb-4">
-                        <li>Cloud PCT is <span id="cloud_pct"></span></li>
-                        <li>Feels Like is <span id="feels_like"></span></li>
-                        <li>Humidity is <span id="humidity"></span></li>
-
-
-                    </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                  <div class="card-header py-3 text-bg-primary border-primary">
-                    <h4 class="my-0 fw-normal">Enterprise</h4>
+                    <div class="card-header py-3 text-bg-primary border-primary">
+                    <h4 class="my-0 fw-normal">Humidity Info</h4>
                   </div>
                   <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
+                    <h1 class="card-title pricing-card-title"><span id="humidity2"></span><small class="text-body-secondary fw-light"> %</small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
-                        <li>Wind Speed is <span id="wind_speed"></span></li>
-                        <li>Wind Degrees is <span id="wind_degrees"></span></li>
-                        <li>Sunrise Time is <span id="sunrise"></span></li>
-                        <li>Sunset Time is <span id="sunset"></span></li>
+                        <li>Humidity(%) is <span id="humidity"></span></li>
+                        <li>Cloud PCT(%) is <span id="cloud_pct1"></span></li>
+                        <li>Feels Like(&#8451) is <span id="feels_like"></span></li>
+
 
                     </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+               
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                 <div class="card-header py-3 text-bg-primary border-primary">
+                    <h4 class="my-0 fw-normal">Wind Info</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><span id="wind_speed2"></span><small class="text-body-secondary fw-light"> km/hr</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Wind Speed(km/hr) is <span id="wind_speed"></span></li>
+                        <li>Wind Degrees is <span id="wind_degrees"></span></li>
+                        <li>Cloud PCT(%) is <span id="cloud_pct2"></span></li>
+
+                        <!-- <li>Sunrise Time is <span id="sunrise"></span></li> -->
+                        <!-- <li>Sunset Time is <span id="sunset"></span></li> -->
+
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -110,74 +110,70 @@
                 <thead>
                   <tr>
                     <th style="width: 34%;"></th>
-                    <th style="width: 22%;">Cloud_pct</th>
-                    <th style="width: 22%;">Feels_like</th>
-                    <th style="width: 22%;">Humidity</th>
-                    <th style="width: 22%;">Max_temp</th>
-                    <th style="width: 22%;">Min_temp</th>
-                    <th style="width: 22%;">Sunrise</th>
-                    <th style="width: 22%;">Sunset</th>
-                    <th style="width: 22%;">Temp</th>
-                    <th style="width: 22%;">Wind_degrees</th>
-                    <th style="width: 22%;">Wind_speed</th>
+                    <th style="width: 22%;">Temp(&#8451)</th>
+                    <th style="width: 22%;">Feels_like(&#8451)</th>
+                    <!-- <th style="width: 22%;">Cloud_pct</th> -->
+                    <th style="width: 22%;">Humidity(%)</th>
+                    <th style="width: 22%;" >Max_temp(&#8451)</th>
+                    <th style="width: 22%;">Min_temp(&#8451)</th>
+                    <th style="width: 22%;">Wind_speed(km/hr)</th>
+                    <!-- <th style="width: 22%;">Wind_degrees</th> -->
 
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row" class="text-start">Boston</th>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>10</td>       
+                    <th scope="row" class="text-start" id="OtherCity1">Bangalore</th>
+                    <td><span id="toc1"></span></td>
+                    <td><span id="floc1"></span></td>
+                    <!-- <td><span id="cloc1"></span></td> -->
+                    <td><span id="hoc1"></span></td>
+                    <td><span id="matoc1"></span></td>
+                    <td><span id="mitoc1"></span></td>
+                    <td><span id="wsoc1"></span></td>
+                    <!-- <td><span id="wdoc1"></span></td> -->
+
+
+                          
                   </tr>
                   <tr>
-                    <th scope="row" class="text-start">Lucknow</th>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>10</td>       
+                    <th scope="row" class="text-start" id="OtherCity2">Ahemdabad</th>
+                    <td><span id="toc2"></span></td>
+                    <td><span id="floc2"></span></td>
+                    <!-- <td><span id="cloc2"></span></td> -->
+                    <td><span id="hoc2"></span></td>
+                    <td><span id="matoc2"></span></td>
+                    <td><span id="mitoc2"></span></td>
+                    <td><span id="wsoc2"></span></td>
+                    <!-- <td><span id="wdoc2"></span></td> -->
+
                   </tr>
-                </tbody>
+                <!-- </tbody>
         
-                <tbody>
+                <tbody> -->
                   <tr>
-                    <th scope="row" class="text-start">Ahemdabad</th>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>10</td>       
+                    <th scope="row" class="text-start" id="OtherCity3">Kolkata</th>
+                    <td><span id="toc3"></span></td>
+                    <td><span id="floc3"></span></td>
+                    <!-- <td><span id="cloc3"></span></td> -->
+                    <td><span id="hoc3"></span></td>
+                    <td><span id="matoc3"></span></td>
+                    <td><span id="mitoc3"></span></td>
+                    <td><span id="wsoc3"></span></td> 
+                    <!-- <td><span id="wdoc3"></span></td>  -->
+
                   </tr>
                   <tr>
-                    <th scope="row" class="text-start">Chennai</th>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>10</td>       
+                    <th scope="row" class="text-start" id="OtherCity4">Lucknow</th>
+                    <td><span id="toc4"></span></td>
+                    <td><span id="floc4"></span></td>
+                    <!-- <td><span id="cloc4"></span></td> -->
+                    <td><span id="hoc4"></span></td>
+                    <td><span id="matoc4"></span></td>
+                    <td><span id="mitoc4"></span></td>
+                    <td><span id="wsoc4"></span></td> 
+                    <!-- <td><span id="wdoc4"></span></td>   -->
+ 
                   </tr>
                  
                 </tbody>
